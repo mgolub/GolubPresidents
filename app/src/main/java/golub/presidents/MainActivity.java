@@ -13,11 +13,13 @@ import com.google.gson.GsonBuilder;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private RecyclerView recyclerView;
-    public static President[] presidents;
+
 
 
     @Override
@@ -37,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         InputStream in = getResources().openRawResource(R.raw.presidents);
-         presidents = gson.fromJson(new InputStreamReader(in), President[].class);
+          President presidents[] = gson.fromJson(new InputStreamReader(in), President[].class);
 
-        PresidentAdapter adapter = new PresidentAdapter(presidents);
+        PresidentRecyclerViewAdapter adapter = new PresidentRecyclerViewAdapter(presidents);
         recyclerView.setAdapter(adapter);
 
 

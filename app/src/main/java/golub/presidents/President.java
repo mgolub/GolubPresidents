@@ -1,9 +1,11 @@
 package golub.presidents;
 
+import java.io.Serializable;
+
 /**
  * Created by student1 on 10/22/2015.
  */
-public class President {
+public class President implements Serializable {
     private int number;
     private String president;
     private int birthYear;

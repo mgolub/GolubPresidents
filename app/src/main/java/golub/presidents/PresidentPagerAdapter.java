@@ -44,12 +44,14 @@ public class PresidentPagerAdapter extends PagerAdapter {
         birthYear.append("Birth Year: ");
         birthYear.append(String.valueOf(president.getBirthYear()));
         deathYear.append("Death Year: ");
-        deathYear.append(String.valueOf(president.getDeathYear()));
-        tookOffice.append("Took Office: ");
+        if(deathYear !=null) {
+            deathYear.append(String.valueOf(president.getDeathYear()));
+        }tookOffice.append("Took Office: ");
         tookOffice.append(president.getTookOffice());
         leftOffice.append("Left Office: ");
-        leftOffice.append(president.getLeftOffice());
-        party.append("Party: ");
+        if(leftOffice !=null) {
+            leftOffice.append(president.getLeftOffice());
+        }party.append("Party: ");
         party.append(president.getParty());
 
 
