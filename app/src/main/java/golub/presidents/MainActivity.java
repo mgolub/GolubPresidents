@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity implements OnPresidentSelectedListener {
 
@@ -21,12 +23,12 @@ public class MainActivity extends AppCompatActivity implements OnPresidentSelect
         detailFragment = (PresidentDetailFragment)manager.findFragmentById(R.id.detailFragment);
     }
     @Override
-    public void onSelect(President[] presidents, int position) {
+    public void onSelect(List<President> presidents, int position) {
         if (detailFragment != null) {
             detailFragment.showPresidentDetail(presidents, position);
         } else {
             Intent intent = new Intent(this, DetailActivity.class);
-            intent.putExtra("PRESIDENTS", presidents);
+            intent.putExtra("PRESIDENTS", presidents.toArray(new President[0]));
             intent.putExtra("POSITION", position);
             this.startActivity(intent);
         }

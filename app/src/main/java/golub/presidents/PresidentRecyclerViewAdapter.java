@@ -6,16 +6,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 
 public class PresidentRecyclerViewAdapter extends RecyclerView.Adapter<PresidentViewHolder>{
 
     private OnPresidentSelectedListener listener;
-    private President[] presidents;
+    private List<President> presidents;
 
-    public PresidentRecyclerViewAdapter(President[] presidents, OnPresidentSelectedListener listener){
+    public PresidentRecyclerViewAdapter(List<President> presidents, OnPresidentSelectedListener listener){
         this.presidents = presidents;
         this.listener = listener;
     }
+
+
 
     @Override
     public PresidentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -29,7 +33,7 @@ public class PresidentRecyclerViewAdapter extends RecyclerView.Adapter<President
     @Override
     public void onBindViewHolder(final PresidentViewHolder holder, final int position) {
 
-        holder.bind(presidents[position]);
+        holder.bind(presidents.get(position));
 
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -42,6 +46,6 @@ public class PresidentRecyclerViewAdapter extends RecyclerView.Adapter<President
 
     @Override
     public int getItemCount() {
-        return presidents.length;
+        return presidents.size();
     }
 }

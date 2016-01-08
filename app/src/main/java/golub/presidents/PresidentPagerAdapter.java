@@ -7,18 +7,20 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 
 public class PresidentPagerAdapter extends PagerAdapter {
 
-    private President[] presidents;
+    private List<President> presidents;
 
-    public PresidentPagerAdapter(President[] presidents) {
+    public PresidentPagerAdapter(List<President> presidents) {
         this.presidents = presidents;
     }
 
     @Override
     public int getCount() {
-        return presidents.length;
+        return presidents.size();
     }
 
     @Override
@@ -47,7 +49,7 @@ public class PresidentPagerAdapter extends PagerAdapter {
                 R.drawable.p41, R.drawable.p42, R.drawable.p43};
 
         image.setImageResource(images[position]);
-        President president = presidents[position];
+        President president = presidents.get(position);
         name.setText(president.getPresident());
         number.append("President Number ");
         number.append(String.valueOf(president.getNumber()));

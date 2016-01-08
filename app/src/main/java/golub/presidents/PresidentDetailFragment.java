@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 /**
  * Created by student1 on 12/10/2015.
  */
@@ -27,7 +29,7 @@ public class PresidentDetailFragment extends Fragment {
 
     }
 
-    public void showPresidentDetail(President[] presidents, int position){
+    public void showPresidentDetail(List<President> presidents, int position){
         PresidentPagerAdapter adapter = new PresidentPagerAdapter(presidents);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(position);

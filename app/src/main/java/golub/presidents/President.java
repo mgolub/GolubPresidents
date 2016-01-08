@@ -8,20 +8,21 @@ import java.io.Serializable;
 public class President implements Serializable {
     private int number;
     private String president;
-    private int birthYear;
-    private int deathYear;
-    private String tookOffice;
-    private String leftOffice;
+    private int birth_year;
+    private int death_year;
+
+    private String took_office;
+    private String left_office;
     private String party;
 
     public String getPresident(){
         return this.president;
     }
     public int getNumber(){return this.number; }
-    public int getBirthYear(){return this.birthYear;}
-    public int getDeathYear() {return deathYear;}
-    public String getTookOffice(){ return tookOffice;}
-    public String getLeftOffice(){ return leftOffice;}
+    public int getBirthYear(){return this.birth_year;}
+    public int getDeathYear() {return death_year;}
+    public String getTookOffice(){ return took_office;}
+    public String getLeftOffice(){ return left_office;}
     public String getParty() {return party;}
 
 
